@@ -1,0 +1,1 @@
+Putting the observer pattern into practice creating a microcomponent from the Modern JavaScript from the beginning course by Brad Traversy. Subscribing and unsubscribing to milliseconds and seconds, try it on: https://marccodez.github.io/Observer-Pattern-Practice/

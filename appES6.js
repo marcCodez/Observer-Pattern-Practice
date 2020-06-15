@@ -1,16 +1,18 @@
 // create function constructor
-function EventObserver() {
+class EventObserver {
     // Add property observers, represents the functions that will be passed into it
+    constructor(){
     this.observers = [];
-}
+    }
+
 
 // clean way of adding methods in the prototpe instead of e.g. prototype.subscribe
-EventObserver.prototype = {
-    subscribe: function(fn) {
+
+     subscribe(fn) {
         this.observers.push(fn);
         console.log(`You are now subscribed to ${fn.name} `)
-    },
-    unsubscribe: function(fn) {
+    }
+    unsubscribe(fn) {
         this.observers = this.observers.filter(function(item){
             // Filter out from the list whatever matches the callback function. If there is
             //no match the callback gets to stay on the list. The filter returns a new list and
@@ -20,14 +22,16 @@ EventObserver.prototype = {
             }
         });
         console.log(`You are now unsubscirbed from ${fn.name}`)
-    },
+    }
+    
     // loop through observers
-    fire: function() {
+    fire() {
         this.observers.forEach(function(item){
             item.call();
         });
     }
 }
+
 
 const click = new EventObserver();
 
